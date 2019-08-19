@@ -65,7 +65,7 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void should_add_1_to_the_quality_when_item_name_equals_Aged_Brie_and_quality_smaller_than_50_and_sellIn_bigger_than_6() {
+    public void should_add_1_to_the_quality_when_item_name_equals_Aged_Brie_and_quality_smaller_than_50() {
         Item itemList[] = new Item[1];
         itemList[0] = new Item("Aged Brie", 123, 49);
         GildedRose gildedRose = new GildedRose(itemList);
@@ -74,6 +74,8 @@ public class GildedRoseTest {
 
         assertEquals(50, gildedRose.items[0].quality);
     }
+
+
 
 
 
