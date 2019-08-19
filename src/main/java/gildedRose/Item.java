@@ -8,12 +8,33 @@ public class Item {
 
     public int quality;
 
+    private ItemStrategy itemStrategy;
+
+
     public Item(String name, int sellIn, int quality) {
         this.name = name;
         this.sellIn = sellIn;
         this.quality = quality;
+        generateItemStrategy(name);
     }
 
+
+    public void generateItemStrategy(String name){
+        switch (name) {
+            case "Aged Brie":
+                itemStrategy = new AgedItemStrategy();
+                break;
+            case "Backstage passes to a TAFKAL80ETC concert":
+                itemStrategy = new BackstageItemStrategy();
+                break;
+            case "Sulfuras, Hand of Ragnaros":
+                itemStrategy = new SulfurasItemStrategy();
+                break;
+            default:
+                itemStrategy = new OtherItemStrategy();
+                break;
+        }
+    }
     public void updateQuality() {
         switch (name) {
             case "Aged Brie":
