@@ -32,10 +32,8 @@ public class Item {
                         quality = quality + 1;
                     }
 
-                    if (sellIn < 6) {
-                        if (quality < 50) {
-                            quality = quality + 1;
-                        }
+                    if (sellIn < 6 && quality < 50) {
+                        quality = quality + 1;
                     }
                 }
                 sellIn = sellIn - 1;
