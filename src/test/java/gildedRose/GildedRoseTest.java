@@ -107,6 +107,18 @@ public class GildedRoseTest {
 
         assertEquals(50, gildedRose.items[0].quality);
     }
+
+    @Test
+    public void should_add_3_to_the_quality_when_item_name_equals_Backstage_passes_to_a_TAFKAL80ETC_concert_and_quality_equals_47_and_sellIn_equals_6() {
+        Item itemList[] = new Item[1];
+        itemList[0] = new Item("Backstage passes to a TAFKAL80ETC concert", 6, 47);
+        GildedRose gildedRose = new GildedRose(itemList);
+
+        gildedRose.updateQuality();
+
+        assertEquals(49, gildedRose.items[0].quality);
+    }
+
     @Test
     public void should_add_3_to_the_quality_when_item_name_equals_Backstage_passes_to_a_TAFKAL80ETC_concert_and_quality_equals_47_and_sellIn_smaller_than_6() {
         Item itemList[] = new Item[1];
