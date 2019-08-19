@@ -20,20 +20,7 @@ public class Item {
 
 
     public void generateItemStrategy(String name){
-        switch (name) {
-            case "Aged Brie":
-                itemStrategy = new AgedItemStrategy();
-                break;
-            case "Backstage passes to a TAFKAL80ETC concert":
-                itemStrategy = new BackstageItemStrategy();
-                break;
-            case "Sulfuras, Hand of Ragnaros":
-                itemStrategy = new SulfurasItemStrategy();
-                break;
-            default:
-                itemStrategy = new OtherItemStrategy();
-                break;
-        }
+        this.itemStrategy = ItemStrategyFactory.generateItemStrategy(name);
     }
     public void updateQuality() {
         itemStrategy.updateQuality(this);
