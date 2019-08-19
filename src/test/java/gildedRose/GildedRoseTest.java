@@ -130,6 +130,17 @@ public class GildedRoseTest {
         assertEquals(50, gildedRose.items[0].quality);
     }
 
+    @Test
+    public void should_sub_1_from_sellIn_when_item_name_not_equals_Sulfuras_Hand_of_Ragnaros(){
+        Item itemList[] = new Item[]{new Item("test", 5, 47)};
+        GildedRose gildedRose = new GildedRose(itemList);
+
+        gildedRose.updateQuality();
+
+        assertEquals(4, gildedRose.items[0].sellIn);
+
+    }
+
 
 
 
