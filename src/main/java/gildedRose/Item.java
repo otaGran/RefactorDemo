@@ -55,7 +55,7 @@ public class Item {
                         }
                     }
                 } else {
-                    quality = quality - quality;
+                    quality = 0;
                 }
             } else {
                 if (quality < 50) {
