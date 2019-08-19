@@ -75,6 +75,17 @@ public class GildedRoseTest {
         assertEquals(50, gildedRose.items[0].quality);
     }
 
+    @Test
+    public void should_add_1_to_the_quality_when_item_name_equals__Backstage_passes_to_a_TAFKAL80ETC_concert_and_quality_smaller_than_50_and_sellIn_equals_11() {
+        Item itemList[] = new Item[1];
+        itemList[0] = new Item("Aged Brie", 11, 49);
+        GildedRose gildedRose = new GildedRose(itemList);
+
+        gildedRose.updateQuality();
+
+        assertEquals(50, gildedRose.items[0].quality);
+    }
+
 
 
 
